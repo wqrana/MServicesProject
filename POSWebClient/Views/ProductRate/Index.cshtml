@@ -1,0 +1,79 @@
+﻿@model IEnumerable<ProductRateModel>
+
+@{
+    ViewData["Title"] = "Product Rate(s)";
+}
+<div class="page-header mb-2">
+    <div class="row align-items-center">
+        <div class="col-sm-12">
+            <h3 class="page-title"> @ViewData["Title"]</h3>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="row mb-4">
+    <div class="col-md-12">
+        <a class="btn btn-info float-right" href="javascript:createOrEditRecord(0)">New Product Rate</a>
+    </div>    
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped custom-table table-nowrap mb-0" id="tblProductRate">
+    <thead>
+        <tr>
+                           
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>               
+                <th>
+                    @Html.DisplayNameFor(model => model.EffectiveRate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EffectiveDate)
+                </th>
+                <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+        <tr>
+
+                    
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Product.Code)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>                   
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EffectiveRate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EffectiveDate)
+                    </td>
+            <td>
+                <div class="pull-right">
+                <a class="btn btn-primary btn-sm" href="javascript:createOrEditRecord(@item.Id)" >Edit</a>
+                <a class="btn btn-danger btn-sm" href="javascript:showDeletePopup(@item.Id)">Delete</a>
+                <a class="btn btn-secondary btn-sm" href="javascript:viewDetails(@item.Id)" >Rate Change History</a>
+                
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>  
+
+@await Html.PartialAsync("_IndexPageCRUDActionPartial")
+<script>
+$(document).ready(function () {
+        $("#tblProductRate").DataTable();
+        $("#divMainAlert").alert();
+       
+    });
+
+</script>

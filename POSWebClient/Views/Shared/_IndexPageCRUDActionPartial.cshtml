@@ -1,0 +1,107 @@
+﻿
+<script>
+   
+    function createOrEditRecord(id) {
+        debugger;
+        
+        var url = '@Url.Action("CreateOrEdit", (string)ViewBag.controllerName)';
+        console.log(url);
+        url = url + "/" + id;
+        $.ajax({
+            type: "GET",
+            url: url,
+            success: function (data) {
+                $("#adhocPopupContent").html(data);
+                // $("#adhocPopupTitle").text("@ViewBag.AhocPopupTitle");
+                $("#adhocPopupModal").modal('show');
+            }
+        });
+    }
+    function viewDetails(id) {
+        debugger;
+        var url = '@Url.Action("Details", (string)ViewBag.ControllerName)';
+        console.log(url);
+        url = url + "/" + id;
+        $.ajax({
+            type: "GET",
+            url: url,
+            success: function (data) {
+                $("#adhocPopupContent").html(data);
+                // $("#adhocPopupTitle").text("@ViewBag.AhocPopupTitle");
+                $("#adhocPopupModal").modal('show');
+            }
+        });
+    }
+    function showDeletePopup(id) {
+        debugger;
+        var url = '@Url.Action("Delete", (string)ViewBag.ControllerName)';
+        url = url + "/" + id;
+        $.ajax({
+            type: "GET",
+            url: url,
+            success: function (data) {
+                $("#adhocPopupContent").html(data);
+                $("#adhocPopupModal").modal('show');
+            }
+        });
+    }
+    function confirmDelete(id) {
+        debugger;
+        var url = '@Url.Action("ConfirmDelete", (string)ViewBag.ControllerName)';
+        url = url + "/" + id;
+        $.ajax({
+            type: "DELETE",
+            url: url,
+            success: function (data) {
+                if (data.statusCode == 1) {
+                    $("#adhocPopupModal").modal('hide');
+                    showMainAlert("Success", data.message);
+
+                    setTimeout(function () {
+                        location.reload();
+                    }, 2000);
+                    return
+                }
+                else if (data.statusCode == -1) {
+                    showMainAlert("Error", data.message);
+                }
+            }
+        });
+    }
+    function saveRecord(dataObject) {
+        debugger;
+        var url = '@Url.Action("CreateOrEdit", (string)ViewBag.ControllerName)';
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: dataObject,
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            //dataType: "json",
+            success: function (data) {
+                debugger;
+                if (data.statusCode == 1) {
+                    $("#adhocPopupModal").modal('hide');
+                    showMainAlert("Success", data.message);
+
+                    setTimeout(function () {
+                        location.reload();
+                    }, 2000);
+                    return
+                }
+                else if (data.statusCode == -1) {
+                    showMainAlert("Error", data.message);
+                }
+                else {
+                    $("#adhocPopupContent").html(data);
+                }
+            },
+            error: function (data, status, xhr) {
+                debugger;
+                var msg = ("Error in ajax call " + status);
+                showMainAlert("Error", msg);
+
+            }
+
+        });
+    }
+</script>

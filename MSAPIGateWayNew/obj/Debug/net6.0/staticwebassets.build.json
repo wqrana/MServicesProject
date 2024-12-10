@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "hrdL7qH47QhheRYoDxB6vnI92Db8yNN2JK/7sXcvldY=",
+  "Source": "MSAPIGateWay",
+  "BasePath": "_content/MSAPIGateWay",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

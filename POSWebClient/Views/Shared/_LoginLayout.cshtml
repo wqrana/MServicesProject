@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] - POS Web</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+       <!--Scripts-->
+    <script src="~/lib/jquery/dist/jquery.js" asp-append-version="true"></script>
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+   
+</head>
+<body>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <div id="divMainAlert" class=" mb-0 alert alert-success alert-dismissible fade" role="alert">
+                <strong>Alert!</strong><span class="p-2" id="spanMainAlert"> Test Alert </span>
+                <button type="button" class="close btn btn-sm float-end" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - POS Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script>
+        $(document).ready(function () {
+            debugger;
+            var errorMsg = '@TempData["ErrorMessage"]';
+            var successMsg = '@TempData["SuccessMessage"]';
+            if (errorMsg != '') {
+                showMainAlert("Error", errorMsg);
+            }
+            else if (successMsg != '') {
+                showMainAlert("Success", successMsg);
+            }
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

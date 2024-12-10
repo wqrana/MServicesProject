@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "1BXx53jDqP96x0twN4QdC/zkSMOYcV5GTOv1SjMhoKJ1NS2ceYHDzDO4JEfLw2v6L4Aq+C1MiZvbLR4sXNCnfw==",
+  "success": true,
+  "projectFilePath": "D:\\AspNetCore Learning\\POSMSArch\\SharedMessageBroker\\SharedMessageBroker.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Waqar\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.0\\microsoft.extensions.configuration.6.0.0.nupkg.sha512",
+    "C:\\Users\\Waqar\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Waqar\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\Waqar\\.nuget\\packages\\rabbitmq.client\\6.8.1\\rabbitmq.client.6.8.1.nupkg.sha512",
+    "C:\\Users\\Waqar\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\Waqar\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\Waqar\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "0T+HG5r9ZO9aIPkBTi8p01EcdJbUZnjLlNIk1R9+8qo=",
+  "Source": "MSCustomerAPI",
+  "BasePath": "_content/MSCustomerAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

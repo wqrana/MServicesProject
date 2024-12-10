@@ -1,0 +1,42 @@
+﻿@model POSWebClient.Models.CustomerModel
+
+<h4 class="text-danger text-center">Are you sure you want to delete this?</h4>
+<div class="row">
+    <div class="offset-md-1 col-md-11">
+        <dl>
+            <dt class="col-md-2">               
+                <label asp-for="FirstName" class="control-label"></label>
+            </dt>
+            <dd class="col-md-10">
+                <input asp-for="FirstName" disabled class="form-control" />
+            </dd>
+            <dt class="col-md-2">
+               
+                <label asp-for="LastName" class="control-label"></label>
+            </dt>
+            <dd class="col-md-10">              
+                <input asp-for="LastName" disabled class="form-control" />
+            </dd>
+            <dt class="col-md-2">
+               
+                <label asp-for="Email" class="control-label"></label>
+            </dt>
+            <dd class="col-md-10">
+               
+                <input asp-for="Email" disabled class="form-control" />
+            </dd>
+            <dt class="col-md-2">
+                <label asp-for="Phone" class="control-label"></label>
+            </dt>
+            <dd class="col-md-10">
+                
+                <input asp-for="Phone" disabled class="form-control" />
+            </dd>
+            
+        </dl>
+    </div>
+</div>
+<div class="offset-md-4 mt-4">
+    <button id="btnDeleteCustomer" class="btn  btn-danger" onclick="confirmDelete(@Model.Id)">Delete</button>
+    <button id="btnCancel" class="btn btn-primar" data-bs-dismiss="modal" aria-label="Close">Close</button>
+</div>

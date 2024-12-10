@@ -1,0 +1,200 @@
+﻿@model IEnumerable<ProductModel>
+
+@{
+    ViewData["Title"] = "Product(s)";
+}
+<div class="page-header mb-2">
+    <div class="row align-items-center">
+        <div class="col-sm-12">
+            <h3 class="page-title"> @ViewData["Title"]</h3>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="row mb-4">
+    <div class="col-md-12">
+        <a class="btn btn-info float-right" href="javascript:createOrEditRecord(0)">New Product</a>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped custom-table table-nowrap mb-0" id="tblProduct">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Code)                    
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoryType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Brand)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DefaultDiscountPct)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DefaultSalesPrice)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(model => item.Code)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.CategoryType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Brand)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.DefaultDiscountPct)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.DefaultSalesPrice)
+                    </td>
+                    <td>
+                        <div class="pull-right">
+                            <a class="btn btn-info btn-sm" href="javascript:redirectProductRate(@item.Id)">Effective Price</a>
+                            <a class="btn btn-primary btn-sm" href="javascript:createOrEditRecord(@item.Id)">Edit</a>
+                            <a class="btn btn-secondary btn-sm" href="javascript:viewDetails(@item.Id)">Details</a>                            
+                            <a class="btn btn-danger btn-sm" href="javascript:showDeletePopup(@item.Id)">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@await Html.PartialAsync("_IndexPageCRUDActionPartial")
+
+<script>
+    $(document).ready(function () {
+        $("#tblProduct").DataTable();
+        $("#divMainAlert").alert();
+    });
+    /*
+    function createOrEditProduct(id) {
+        debugger;
+        var url = '@Url.Action("CreateOrEdit", "Product")';
+        console.log(url);
+        url = url + "/" + id;
+        $.ajax({
+            type: "GET",
+            url: url,
+            success: function (data) {
+                $("#adhocPopupContent").html(data);
+                // $("#adhocPopupTitle").text("@ViewBag.AhocPopupTitle");
+                $("#adhocPopupModal").modal('show');
+            }
+        });
+    }
+    function viewDetails(id) {
+        debugger;
+        var url = '@Url.Action("Details", "Product")';
+        console.log(url);
+        url = url + "/" + id;
+        $.ajax({
+            type: "GET",
+            url: url,
+            success: function (data) {
+                $("#adhocPopupContent").html(data);
+                // $("#adhocPopupTitle").text("@ViewBag.AhocPopupTitle");
+                $("#adhocPopupModal").modal('show');
+            }
+        });
+    }
+    function showDeletePopup(id) {
+        debugger;
+        var url = '@Url.Action("Delete", "Product")';
+        url = url + "/" + id;
+        $.ajax({
+            type: "GET",
+            url: url,
+            success: function (data) {
+                $("#adhocPopupContent").html(data);
+                $("#adhocPopupModal").modal('show');
+            }
+        });
+    }
+    function confirmDelete(id) {
+        debugger;
+        var url = '@Url.Action("ConfirmDelete", "Product")';
+        url = url + "/" + id;
+        $.ajax({
+            type: "DELETE",
+            url: url,
+            success: function (data) {
+                if (data.statusCode == 1) {
+                    $("#adhocPopupModal").modal('hide');
+                    showMainAlert("Success", data.message);
+
+                    setTimeout(function () {
+                        location.reload();
+                    }, 2000);
+                    return
+                }
+                else if (data.statusCode == -1) {
+                    showMainAlert("Error", data.message);
+                }
+            }
+        });
+    }
+    function saveProduct(dataObject) {
+        debugger;
+        var url = '@Url.Action("CreateOrEdit", "Product")';
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: dataObject,
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            //dataType: "json",
+            success: function (data) {
+                debugger;
+                if (data.statusCode == 1) {
+                    $("#adhocPopupModal").modal('hide');
+                    showMainAlert("Success", data.message);
+
+                    setTimeout(function () {
+                        location.reload();
+                    }, 2000);
+                    return
+                }
+                else if (data.statusCode == -1) {
+                    showMainAlert("Error", data.message);
+                }
+                else {
+                    $("#adhocPopupContent").html(data);
+                }
+            },
+            error: function (data, status, xhr) {
+                debugger;
+                var msg = ("Error in ajax call " + status);
+                showMainAlert("Error", msg);
+
+            }
+
+        });
+    }
+    */
+</script>

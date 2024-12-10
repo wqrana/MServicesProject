@@ -1,0 +1,42 @@
+﻿@model POSWebClient.Models.ProductRateModel
+
+<h4 class="text-danger text-center">Are you sure you want to delete this?</h4>
+<div class="row">
+    <div class="offset-md-1 col-md-11">
+        <dl>
+            <dt class="col-md-6">               
+                <label asp-for="Description" class="control-label"></label>
+            </dt>
+            <dd class="col-md-10">
+                <input asp-for="Description" disabled class="form-control" />
+            </dd>
+            <dt class="col-md-6">
+               
+                <label asp-for="ProductId" class="control-label"></label>
+            </dt>
+            <dd class="col-md-10">              
+                <input asp-for="Product.Code" disabled class="form-control" />
+            </dd>
+            <dt class="col-md-6">
+               
+                <label asp-for="EffectiveRate" class="control-label"></label>
+            </dt>
+            <dd class="col-md-10">
+               
+                <input asp-for="EffectiveRate" disabled class="form-control" />
+            </dd>
+            <dt class="col-md-6">
+                <label asp-for="EffectiveDate" class="control-label"></label>
+            </dt>
+            <dd class="col-md-10">
+                
+                <input asp-for="EffectiveDate" disabled class="form-control" />
+            </dd>
+            
+        </dl>
+    </div>
+</div>
+<div class="offset-md-4 mt-4">
+    <button id="btnDeleteProductRate" class="btn  btn-danger" onclick="confirmDelete(@Model.Id)">Delete</button>
+    <button id="btnCancel" class="btn btn-primar" data-bs-dismiss="modal" aria-label="Close">Close</button>
+</div>

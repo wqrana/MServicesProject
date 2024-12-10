@@ -1,0 +1,123 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - POS Web</title>
+    <!--Styles-->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/POSWebClient.styles.css" asp-append-version="true" />
+    <link href="~/lib/datatables/css/jquery.datatables.css" rel="stylesheet" />
+    <link href="~/lib/datatables/css/jquery.datatables.min.css" rel="stylesheet" />
+   <link href="~/lib/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <!--Scripts-->
+    <script src="~/lib/jquery/dist/jquery.js" asp-append-version="true"></script>
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+       
+    <script src="~/lib/datatables/js/jquery.datatables.js"></script>
+    <script src="~/lib/datatables/js/jquery.datatables.min.js"></script>
+    <script src="~/lib/moment.js/moment.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>    
+    <script src="~/lib/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">POS Web</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse navbar-dark d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Index">Customer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Product</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ProductRate" asp-action="Index">Product Rate</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Purchase" asp-action="Index">Purchase</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Sales" asp-action="Index">Sales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Stock" asp-action="Index">Stock</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                        </li>
+                       
+                    </ul>
+                </div>
+                <div class="navbar-right navbar-dark d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            @{
+                                var userSessionInfo = httpContextAccessor.HttpContext.Session.GetObject<UserSessionInfo>("UserSessionInfo");
+
+                                if (userSessionInfo != null)
+                                {
+
+                                    <span class="nav-link text-dark pl-2 d-inline-block">@userSessionInfo.FirstName</span>
+                                    <a class="nav-link text-danger pl-2 d-inline-block" asp-area="" asp-controller="UserLogin" asp-action="Logout">Logout</a>
+                                }
+                            }
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <div id="divMainAlert" class=" mb-0 alert alert-success alert-dismissible fade" role="alert">
+                <strong>Alert!</strong><span id="spanMainAlert"> Test Alert </span>
+                <button type="button" class="close btn btn-sm float-end" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - POS Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <!--Adhoc popup window generic syntax-->
+    <div id='adhocPopupModal' class='modal custom-modal'>
+        <div id='adhocModaldialog' class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="mt-2 p-1">
+                    <div class="alert alert-primary" style="text-align:center;background-color: #00c5fb;border: 1px solid #00c5fb;">
+                        <h6 id="adhocPopupTitle" style="display: inline;">Popup</h6>
+                        <button type="button" class="close float-end btn-xs" data-bs-dismiss="modal">x</button>
+
+                    </div>
+                    <hr>
+                </div>
+                <div class="modal-body pt-0">
+                    <div id='adhocPopupContent'>
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End-->
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

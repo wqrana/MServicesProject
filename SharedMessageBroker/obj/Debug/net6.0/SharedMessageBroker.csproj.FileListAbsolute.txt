@@ -1,0 +1,12 @@
+D:\AspNetCore Learning\POSMSArch\SharedMessageBroker\bin\Debug\net6.0\SharedMessageBroker.deps.json
+D:\AspNetCore Learning\POSMSArch\SharedMessageBroker\bin\Debug\net6.0\SharedMessageBroker.dll
+D:\AspNetCore Learning\POSMSArch\SharedMessageBroker\bin\Debug\net6.0\SharedMessageBroker.pdb
+D:\AspNetCore Learning\POSMSArch\SharedMessageBroker\obj\Debug\net6.0\SharedMessageBroker.csproj.AssemblyReference.cache
+D:\AspNetCore Learning\POSMSArch\SharedMessageBroker\obj\Debug\net6.0\SharedMessageBroker.GeneratedMSBuildEditorConfig.editorconfig
+D:\AspNetCore Learning\POSMSArch\SharedMessageBroker\obj\Debug\net6.0\SharedMessageBroker.AssemblyInfoInputs.cache
+D:\AspNetCore Learning\POSMSArch\SharedMessageBroker\obj\Debug\net6.0\SharedMessageBroker.AssemblyInfo.cs
+D:\AspNetCore Learning\POSMSArch\SharedMessageBroker\obj\Debug\net6.0\SharedMessageBroker.csproj.CoreCompileInputs.cache
+D:\AspNetCore Learning\POSMSArch\SharedMessageBroker\obj\Debug\net6.0\SharedMessageBroker.dll
+D:\AspNetCore Learning\POSMSArch\SharedMessageBroker\obj\Debug\net6.0\refint\SharedMessageBroker.dll
+D:\AspNetCore Learning\POSMSArch\SharedMessageBroker\obj\Debug\net6.0\SharedMessageBroker.pdb
+D:\AspNetCore Learning\POSMSArch\SharedMessageBroker\obj\Debug\net6.0\ref\SharedMessageBroker.dll

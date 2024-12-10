@@ -1,0 +1,12 @@
+D:\AspNetCore Learning\MessageBroker\ShareBroker\bin\Debug\net6.0\ShareBroker.deps.json
+D:\AspNetCore Learning\MessageBroker\ShareBroker\bin\Debug\net6.0\ShareBroker.dll
+D:\AspNetCore Learning\MessageBroker\ShareBroker\bin\Debug\net6.0\ShareBroker.pdb
+D:\AspNetCore Learning\MessageBroker\ShareBroker\obj\Debug\net6.0\ShareBroker.csproj.AssemblyReference.cache
+D:\AspNetCore Learning\MessageBroker\ShareBroker\obj\Debug\net6.0\ShareBroker.GeneratedMSBuildEditorConfig.editorconfig
+D:\AspNetCore Learning\MessageBroker\ShareBroker\obj\Debug\net6.0\ShareBroker.AssemblyInfoInputs.cache
+D:\AspNetCore Learning\MessageBroker\ShareBroker\obj\Debug\net6.0\ShareBroker.AssemblyInfo.cs
+D:\AspNetCore Learning\MessageBroker\ShareBroker\obj\Debug\net6.0\ShareBroker.csproj.CoreCompileInputs.cache
+D:\AspNetCore Learning\MessageBroker\ShareBroker\obj\Debug\net6.0\ShareBroker.dll
+D:\AspNetCore Learning\MessageBroker\ShareBroker\obj\Debug\net6.0\refint\ShareBroker.dll
+D:\AspNetCore Learning\MessageBroker\ShareBroker\obj\Debug\net6.0\ShareBroker.pdb
+D:\AspNetCore Learning\MessageBroker\ShareBroker\obj\Debug\net6.0\ref\ShareBroker.dll

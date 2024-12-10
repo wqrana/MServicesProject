@@ -1,0 +1,78 @@
+{
+  "Routes": [
+
+   
+    {
+      "DownstreamPathTemplate": "/api/Customer/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44329
+        }
+      ],
+      //"FileCacheOptions": {"TtlSeconds": 10},
+      "UpstreamPathTemplate": "/CustomerAPI/{id}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+         "AllowedScopes": []
+      }
+    }
+    ,
+
+    {
+      "DownstreamPathTemplate": "/api/Product/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44395
+        }
+      ],
+      "UpstreamPathTemplate": "/ProductAPI/{id}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    }
+    ,
+
+    {
+      "DownstreamPathTemplate": "/api/ProductRate/{ActionURL}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44395
+        }
+      ],
+      "UpstreamPathTemplate": "/ProductRateAPI/{ActionURL}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    }
+    ,
+
+    {
+      "DownstreamPathTemplate": "/api/Account/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44393
+        }
+      ],
+      "UpstreamPathTemplate": "/AuthenticateAPI/{id}",
+      "UpstreamHttpMethod": [ "Get", "Post" ]
+    }
+
+  ],
+  "GlobalConfiguration": {
+
+    "BaseUrl": "https://localhost:44314/"
+  }
+}
